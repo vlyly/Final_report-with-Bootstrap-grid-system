@@ -9,8 +9,10 @@ body {
 
 /**Reset CSS**/
 
-p {
-  color: 2b292d;
+p,
+h1,
+h3 {
+  color: rgba(43, 41, 45, 1);
 }
 
 ul,
@@ -44,22 +46,22 @@ button:focus {
 
 /**ect setting**/
 
-.col-flex-box {
+.flex-col-align-center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 /**Set container max width**/
 
 @media screen and (min-width: 1200px) {
-  .container {
+  .container-sm,
+  .container-md {
     max-width: 960px;
   }
 }
 
-/**landing section**/
+/****/
 
 section {
   display: flex;
@@ -67,12 +69,14 @@ section {
   justify-content: center;
 }
 
+/**landing section**/
+
 .landing-section {
   height: 568px;
   background-color: rgba(253, 222, 216, 1);
 }
 
-.title {
+.landing-title {
   margin-bottom: 24px;
   font-size: 40px;
   font-weight: 700;
@@ -82,7 +86,7 @@ section {
   text-align: center;
 }
 
-.landing-description {
+.landing-description-mobile {
   margin-bottom: 24px;
   font-size: 16px;
   color: rgba(43, 41, 45, 1);
@@ -91,7 +95,17 @@ section {
   text-align: center;
 }
 
-.buttongroup {
+.landing-description-desktop {
+  display: none;
+  margin-bottom: 32px;
+  font-size: 22px;
+  color: rgba(43, 41, 45, 1);
+  letter-spacing: -0.01em;
+  line-height: 1.454;
+  text-align: center;
+}
+
+.landing-buttongroup {
   display: flex;
   justify-content: center;
 }
@@ -135,11 +149,9 @@ section {
   background-color: rgba(244, 245, 247, 1);
 }
 
-.testimonials-title1,
-.testimonials-title2 {
+.testimonials-title {
   margin-bottom: 16px;
   font-size: 22px;
-  color: rgba(43, 41, 45, 1);
   letter-spacing: -0.04em;
   line-height: 1.3636;
 }
@@ -147,7 +159,6 @@ section {
 .testimonials-description1,
 .testimonials-description2 {
   font-size: 16px;
-  color: rgba(43, 41, 45, 1);
   letter-spacing: -0.01em;
   line-height: 1.5;
 }
@@ -168,10 +179,13 @@ section {
 }
 
 .programs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   order: 2;
 }
 
-.image-box {
+.programs-image-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,8 +197,12 @@ section {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.image-box:not(:last-child) {
+.programs-image-box:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.programs-image-box > img {
+  margin-bottom: 16px;
 }
 
 .img-fulltime-campus {
@@ -202,7 +220,7 @@ section {
   height: 195px;
 }
 
-.program-title {
+.programs-title {
   font-size: 18px;
   font-weight: bold;
   letter-spacing: -0.02em;
@@ -240,13 +258,26 @@ section {
 
 .curriculum-section {
   height: 706px;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .curriculum-details {
   order: 2;
 }
 
+.curriculum-header::after {
+  display: none;
+  width: 450px;
+  height: 450px;
+  background-image: url("img-curriculum.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 94.444%;
+  content: "";
+}
+
 .curriculum-header {
+  display: flex;
   order: 1;
 }
 
@@ -267,18 +298,20 @@ section {
 
 /**banner-section**/
 
-.banner {
-  justify-content: center;
-  align-items: center;
+.banner-section {
   height: 588px;
   background-color: rgba(242, 248, 250, 1);
+}
+
+.banner-image-box {
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .banner-image {
   width: 290px;
   height: 240px;
   padding: 25px 50px;
-  margin-bottom: 16px;
 }
 
 .banner-header-title {
@@ -292,12 +325,11 @@ section {
   font-size: 16px;
   letter-spacing: -0.01em;
   line-height: 1.5;
+  text-align: center;
 }
 
 .banner-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .banner-form-emailInput {
@@ -320,26 +352,234 @@ section {
 
 .banner-misc {
   font-size: 13px;
-  line-height: 1.5384;
   color: rgba(123, 123, 126, 1);
+  line-height: 1.5384;
+  text-align: center;
 }
 
 .banner-misc > span {
   color: rgba(48, 64, 196, 1);
+  text-decoration: underline;
 }
 
-.mobilePage-footer {
+/**footer-section**/
+
+.footer-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 136px;
   padding: 24px 0;
   background-color: white;
 }
 
-.mobilePage-footer > a {
+.footer-wrapper > a {
   font-size: 14px;
   letter-spacing: -0.01em;
   line-height: 1.7142;
   color: rgba(128, 127, 129, 1);
+}
+
+.footer-wrapper > a:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+/**In desktop**/
+
+@media screen and (min-width: 768px) {
+  /**landing-section**/
+
+  .landing-title {
+    margin-bottom: 32px;
+    font-size: 70px;
+    line-height: 1.028;
+  }
+
+  .landing-description-mobile {
+    display: none;
+  }
+
+  .landing-description-desktop {
+    display: block;
+  }
+
+  .applyButton,
+  .learnButton {
+    width: 160xp;
+    height: 56px;
+  }
+
+  .applyButton:first-child {
+    margin-right: 16px;
+  }
+
+  /**testimonials-section**/
+
+  .testimonials-title {
+    font-size: 26px;
+    line-height: 1.307;
+  }
+
+  .testimonials-description1,
+  .testimonials-description2 {
+    margin-bottom: 0;
+    font-size: 22px;
+    line-height: 1.454;
+  }
+
+  /**program-section**/
+
+  .program-section {
+    height: 827px;
+  }
+
+  .header-category {
+    margin-bottom: 16px;
+    font-size: 22px;
+    line-height: 1.09;
+  }
+
+  .header-title {
+    font-size: 56px;
+    line-height: 1;
+  }
+
+  .header-description {
+    font-size: 22px;
+    line-height: 1.454;
+  }
+
+  .program-header-category,
+  .program-header-title,
+  .program-header-description {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+
+  .program-header-title {
+    margin-bottom: 32px;
+  }
+
+  .program-header-description {
+    margin-bottom: 72px;
+  }
+
+  .programs {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-between;
+  }
+
+  .programs-image-box {
+    height: 300px;
+  }
+
+  .programs-image-box:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .programs-image-box > img {
+    margin-bottom: 24px;
+  }
+
+  .programs-image-box:nth-child(2) {
+    background-color: rgba(49, 65, 197, 1);
+  }
+
+  .programs-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .img-fulltime-remote ~ strong {
+    color: rgba(255, 255, 255, 1);
+  }
+
+  /**curriculum-section**/
+
+  .curriculum-section {
+    height: 728px;
+  }
+
+  .curriculum-header {
+    margin-bottom: 24px;
+  }
+
+  .curriculum-header-contents {
+    width: 450px;
+    margin-right: 30px;
+  }
+
+  .curriculum-header::after {
+    display: inline-block;
+  }
+
+  .curriculum-details-item {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1.444;
+  }
+
+  /**banner-section**/
+
+  .banner-image {
+    width: 287px;
+    height: 285px;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .banner-header-title {
+    margin-bottom: 16px;
+    font-size: 40px;
+    line-height: 1;
+    text-align: inherit;
+  }
+
+  .banner-header-description {
+    margin-bottom: 24px;
+    line-height: 1.454;
+    text-align: inherit;
+  }
+
+  .banner-form {
+    display: flex;
+  }
+
+  .banner-form-emailInput {
+    display: inline-block;
+    width: 362px;
+    height: 56px;
+    margin-right: 8px;
+    margin-bottom: 4;
+    font-size: 18px;
+    text-indent: 16px;
+    line-height: 1.333;
+  }
+
+  .banner-form-startButton {
+    width: 160px;
+    height: 54.58px;
+  }
+
+  .banner-misc {
+    text-align: inherit;
+  }
+
+  /**footer**/
+
+  .footer-wrapper {
+    flex-direction: row;
+    height: 56px;
+    padding: 16px 0;
+  }
+
+  .footer-wrapper > a {
+    font-size: 14px;
+    line-height: 1.714;
+  }
+
+  .footer-wrapper > a:not(:last-child) {
+    margin-right: 16px;
+  }
 }
