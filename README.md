@@ -16,7 +16,7 @@ l. 목표<br>
 4. 반응형 구현하기
 
 <hr>
-<h3>Preview</h3>
+<h3>미리보기/h3>
 <div align="center">
 <p>PC ver.</p>
 
