@@ -13,7 +13,8 @@ l. 목표<br>
 1. html을 tag들을 보다 의미 있게 사용하기<br>
 2. 자주 쓰이는 CSS property들의 쓰임새와 value들을 이해하기<br>
 3. Bootstrap을 이용해 grid system을 이해하고 구성 요소들을 배치하기<br>
-4. 반응형 구현하기
+4. 반응형 구현하기<br>
+5. Figma 시안 보는 법 익히기
 
 <hr>
 <h3>미리보기</h3>
